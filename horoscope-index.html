@@ -1,0 +1,69 @@
+<!-- Luca Spycher 10/31/17 -  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horoscope</title>
+    <script src="horoscope-script.js"></script>
+    <link rel="stylesheet" href="horoscope-sheet.css">
+</head>
+
+<body onload="setUpPage()">
+
+<h1 align="center">Learn About Your Horoscope</h1>
+
+<div id="horoscopeSelect">
+    <div id="selectors">
+        <div id="selectorsContentText">
+            <p id="DOBText">Enter your date of birth:</p>
+        </div>
+        <div id="selectorsContentSelect">
+            <select onchange="adjustDays()" title="Month" id="month">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select title="Day" id="day"></select>
+            <select title="Year" id="year">
+                <script>
+                    var date = new Date();
+                    for(var i = 1900; i <= date.getFullYear(); i++) {
+                        document.write('<option value="'+i+'">'+i+'</option>')
+                    }
+                </script>
+            </select>
+        </div>
+    </div>
+    <div id="buttonDiv">
+        <button onclick="onSubmit()">Get Horoscope!</button>
+    </div>
+</div>
+
+<div id="imageLeft"></div>
+<div id="imageRight"></div>
+<div id="birthday"></div>
+<div id="horoscopeOutput"></div>
+
+<br>
+<p align="center">Note: I copied all of the horoscopes from <a href="http://www.astrology-zodiac-signs.com/zodiac-signs
+/aries/">this</a> website.</p>
+
+<h4 align="center">Your Chinese Zodiac Animal Is:</h4>
+<div id="whiteBackground" class="center">
+    <div id="zodiac" class="center"></div>
+    <img id="zodiacImg" class="center" src="https://cafeastrology.com/wp-content/uploads/2015/04/chinesezodiacwheelyears.png">
+</div>
+
+</body>
+</html>
+
